@@ -1379,6 +1379,7 @@ html, body {
   #slide-3 .s3-layout,
   #slide-4 .s4-layout,
   #slide-5 .s5-layout,
+  #slide-6 .s6-layout,
   #slide-7 .s7-layout {
     grid-template-columns: 1fr;
     height: 100%;
@@ -1394,6 +1395,9 @@ html, body {
   #slide-5.mobile-photo .s5-left  { display: none; }
   #slide-5.mobile-photo .s5-right { display: block !important; height: 100%; }
 
+  #slide-6.mobile-photo .s6-right { display: none; }
+  #slide-6.mobile-photo .s6-left  { display: block !important; height: 100%; }
+
   #slide-7.mobile-photo .s7-left  { display: none; }
   #slide-7.mobile-photo .s7-right { display: block !important; height: 100%; }
 
@@ -1407,6 +1411,10 @@ html, body {
   #slide-5.mobile-text .s5-right { display: none; }
   #slide-5.mobile-text .s5-left  { display: flex !important; height: 100%; padding: 48px 28px 72px; }
 
+  #slide-6.mobile-text .s6-left  { display: none; }
+  #slide-6.mobile-text .s6-right { display: flex !important; height: 100%; flex-direction: column; justify-content: center; }
+  #slide-6.mobile-text .s6-content { padding: 48px 28px 72px; }
+
   #slide-7.mobile-text .s7-right { display: none; }
   #slide-7.mobile-text .s7-left  { display: flex !important; height: 100%; padding: 48px 28px 72px; }
 
@@ -1417,6 +1425,8 @@ html, body {
   #slide-4 .s4-desc     { font-size: 13px; }
   #slide-5 .s5-headline { font-size: 48px; }
   #slide-5 .s5-desc     { font-size: 13px; max-width: 100%; }
+  #slide-6 .s6-headline { font-size: 48px; }
+  #slide-6 .s6-desc     { font-size: 13px; }
   #slide-7 .s7-headline { font-size: 48px; }
   #slide-7 .s7-desc     { font-size: 13px; }
 
@@ -1803,7 +1813,7 @@ best events
   const nextBtn     = document.getElementById('nav-next');
 
   // Mobile virtual slide map: [desktopSlideIndex, 'photo'|'text'|null]
-  // Desktop indices: 0=Cover 1=Overview 2=Vintage 3=Party 4=AI 5=Spinner(skipped) 6=Wall 7=Closing
+  // Desktop indices: 0=Cover 1=Overview 2=Vintage 3=Party 4=AI 5=Spinner 6=Wall 7=Closing
   const MOBILE_MAP = [
     [0, null],    // 1  Cover
     [1, null],    // 2  Overview
@@ -1813,9 +1823,11 @@ best events
     [3, 'text'],  // 6  Party – text
     [4, 'photo'], // 7  AI – photos
     [4, 'text'],  // 8  AI – text
-    [6, 'photo'], // 9  Wall – photos
-    [6, 'text'],  // 10 Wall – text
-    [7, null],    // 11 Closing
+    [5, 'photo'], // 9  Spinner – photos
+    [5, 'text'],  // 10 Spinner – text
+    [6, 'photo'], // 11 Wall – photos
+    [6, 'text'],  // 12 Wall – text
+    [7, null],    // 13 Closing
   ];
 
   // Light-nav slides (warm/light backgrounds)
