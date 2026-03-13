@@ -1327,6 +1327,101 @@ html, body {
   pointer-events: none;
 }
 
+/* ============================================================
+   MOBILE
+   ============================================================ */
+@media (max-width: 768px) {
+
+  /* Nav dots → horizontal row at bottom */
+  #nav-dots {
+    right: auto;
+    top: auto;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    flex-direction: row;
+  }
+
+  /* Arrows closer to edges */
+  #nav-prev { left: 12px; }
+  #nav-next { right: 12px; }
+
+  #slide-counter { bottom: 48px; }
+
+  /* ── Shared text utilities ── */
+  .eyebrow { font-size: 8px; }
+
+  .feature-list { gap: 10px; margin-top: 16px; }
+  .feature-list li { font-size: 13px; }
+
+  .price-box { padding: 14px 16px; margin-top: 20px; }
+  .price-box .price-amount { font-size: 40px; }
+  .price-box .price-note { font-size: 11px; }
+
+  /* ── Slide 1: Cover ── */
+  #slide-1 .content { padding: 40px 28px; max-width: 100%; }
+  #slide-1 .logo { height: 44px; }
+
+  /* ── Slide 2: Overview ── */
+  #slide-2 .s2-header { padding: 32px 24px 0; flex-direction: column; gap: 12px; }
+  #slide-2 .s2-headline { font-size: 36px; }
+  #slide-2 .s2-intro { font-size: 12px; max-width: 100%; }
+  #slide-2 .cards-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+    padding: 16px 24px 56px;
+    overflow-y: auto;
+  }
+
+  /* ── Slides 3–8: single column, hide image panel ── */
+  #slide-3 .s3-layout,
+  #slide-4 .s4-layout,
+  #slide-5 .s5-layout,
+  #slide-6 .s6-layout,
+  #slide-7 .s7-layout,
+  #slide-8 .s8-layout {
+    grid-template-columns: 1fr;
+  }
+
+  #slide-3 .s3-right,
+  #slide-4 .s4-left,
+  #slide-5 .s5-right,
+  #slide-6 .s6-left,
+  #slide-7 .s7-right,
+  #slide-8 .s8-right { display: none; }
+
+  /* ── Slide 3: Vintage ── */
+  #slide-3 .s3-left { padding: 40px 28px 64px; }
+  #slide-3 .s3-headline { font-size: 52px; }
+  #slide-3 .s3-desc { font-size: 13px; max-width: 100%; }
+
+  /* ── Slide 4: Party ── */
+  #slide-4 .s4-right { padding: 40px 28px 64px; }
+  #slide-4 .s4-right .s4-headline { font-size: 52px; }
+  #slide-4 .s4-right .s4-desc { font-size: 13px; }
+
+  /* ── Slide 5: AI ── */
+  #slide-5 .s5-left { padding: 40px 28px 64px; }
+  #slide-5 .s5-headline { font-size: 48px; }
+  #slide-5 .s5-desc { font-size: 13px; max-width: 100%; }
+
+  /* ── Slide 6: Spinner ── */
+  #slide-6 .s6-right { width: 100%; }
+  #slide-6 .s6-content { padding: 40px 28px 64px; }
+  #slide-6 .s6-headline { font-size: 48px; }
+  #slide-6 .s6-desc { font-size: 13px; }
+
+  /* ── Slide 7: Wall ── */
+  #slide-7 .s7-left { padding: 40px 28px 64px; }
+  #slide-7 .s7-headline { font-size: 48px; }
+  #slide-7 .s7-desc { font-size: 13px; }
+
+  /* ── Slide 8: Closing ── */
+  #slide-8 .s8-left { padding: 40px 28px 64px; }
+  #slide-8 .s8-headline { font-size: 40px; }
+  #slide-8 .s8-desc { font-size: 13px; }
+}
+
 </style>
 </head>
 <body>
